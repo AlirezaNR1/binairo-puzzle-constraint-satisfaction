@@ -7,7 +7,9 @@ from State import *
 def main():
     input_numbers = []
     # first row = size of puzzle(n), second row = number of cells that have color in the start (m), row 3 to row 3+m :
-    test_case = open("test_cases/input3.txt").readlines()
+
+    # enter the test case from test cases folder
+    test_case = open("test_cases/input1.txt").readlines()
     for line in test_case:
         line = line.rstrip()
         numbers = line.split(' ')
@@ -38,7 +40,10 @@ def main():
     print('initial board:')
     state.print_board()
     start_time = time()
+
+    #this function solves the puzzle
     backTrack(state)
+
     end_time = time()
     print('time: ', end_time - start_time)
 
